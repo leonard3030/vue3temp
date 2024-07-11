@@ -1,13 +1,13 @@
 <template>
   <div class="navbar">
     <div class="logo">
-      <img src="/logo.png" alt="NoMoreWaste" />
+      <img src="/images/nmwlogo.png" alt="NoMoreWaste" />
     </div>
     <div class="links">
       <router-link to="/">Home</router-link>
       <router-link to="/collections">Collection</router-link>
       <router-link to="/about">About us</router-link>
-      <router-link to="/">Contact</router-link>
+      <router-link to="/contact">Contact</router-link>
       <router-link to="/">Login</router-link>
       <router-link to="/">SignUp</router-link>
     </div>
@@ -34,7 +34,7 @@ export default {
   padding: 10px 2rem;
 }
 .navbar .logo {
-  height: 50px;
+  height: 100px;
 }
 .navbar .logo img {
   height: 100%;

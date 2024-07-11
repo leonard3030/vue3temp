@@ -74,7 +74,7 @@ export default {
 .intro {
   width: 100%;
   max-width: 800px;
-  text-align: left; 
+  text-align: left;
   margin-top: 20px;
 }
 
