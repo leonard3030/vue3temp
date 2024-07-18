@@ -1,15 +1,15 @@
 <template>
   <div class="dashboard">
     <div class="dash-content">
-      <Topbar />
+      <Topbar pageTitle="Dashboard" />
     </div>
   </div>
 </template>
 
 <script>
-import Topbar from "@/views/admin/components/Topbar.vue";
 import { toast } from "vue3-toastify";
 import "vue3-toastify/dist/index.css";
+import Topbar from "@/views/admin/components/Topbar.vue";
 export default {
   components: {
     Topbar,

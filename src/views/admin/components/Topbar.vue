@@ -12,14 +12,8 @@
         <!-- <i class="fas fa-angle-right" v-else></i> -->
       </div>
     </div>
-    <div class="topbar-label" v-if="house">
-      <h3 v-if="!expand">{{ pageTitle }}</h3>
-      <h3 v-else>
-        {{ house.house_name }}
-        <router-link :to="{ name: 'AdminDashboard' }">
-          <i class="fa-solid fa-arrows-rotate"></i>
-        </router-link>
-      </h3>
+    <div class="topbar-label">
+      <h3>{{ pageTitle }}</h3>
     </div>
     <div class="right">
       <div class="notifications">
@@ -69,11 +63,7 @@ export default {
       this.showAccountDrop = false;
     },
   },
-  mounted() {
-    if (this.$getHouse()) {
-      this.house = this.$getHouse();
-    }
-  },
+  mounted() {},
 };
 </script>
 

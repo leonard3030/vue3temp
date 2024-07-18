@@ -5,7 +5,6 @@
     </div>
     <div class="right" :class="!$store.state.showSANav ? 'active' : ''">
       <div class="content">
-        <Topbar />
         <router-view class="art-content" />
       </div>
     </div>
@@ -14,12 +13,10 @@
 
 <script>
 import Sidebar from "@/views/admin/components/Sidebar.vue";
-import Topbar from "@/views/admin/components/Topbar.vue";
 export default {
   name: "Home",
   components: {
     Sidebar,
-    Topbar,
   },
   data() {
     return {};

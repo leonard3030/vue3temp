@@ -14,7 +14,7 @@ export default {
       return name.toLowerCase().replace(/\s/g, "-");
     },
     $img(name) {
-      return `/img/${name}`;
+      return `/images/${name}`;
     },
     $upload(name) {
       return this.$store.state.apiUploadUrl + `${name}`;
@@ -31,40 +31,41 @@ export default {
       return this.$route.path.includes(url);
     },
     $AdminLogin(user, token) {
-      localStorage.setItem("ipms_admin", JSON.stringify(user));
-      localStorage.setItem("ipms_admin_token", token);
+      localStorage.setItem("nmw_admin", JSON.stringify(user));
+      localStorage.setItem("nmw_admin_token", token);
       this.$router.push({ name: "AdminDashboard" });
     },
     $getAdmin() {
-      return JSON.parse(localStorage.getItem("ipms_admin"));
+      return JSON.parse(localStorage.getItem("nmw_admin"));
     },
     $getAdminToken() {
-      return localStorage.getItem("ipms_admin_token");
+      // return localStorage.getItem("nmw_admin_token");
+      return "296da35eb30c10d6c4a7cdbfa55d7f9bc6d9441e8b3c61260218cf6481dd0206803abf67f66a5029a379c5bc7205a31a6661cc1725aa1b8bce637c8eb5feb0b21720088661";
     },
     $adminIsAdmin() {
-      const user = JSON.parse(localStorage.getItem("ipms_admin"));
+      const user = JSON.parse(localStorage.getItem("nmw_admin"));
       if (user.type == "admin") {
         return true;
       }
       return false;
     },
     $adminIsAgent() {
-      const user = JSON.parse(localStorage.getItem("ipms_admin"));
+      const user = JSON.parse(localStorage.getItem("nmw_admin"));
       if (user.type == "agent") {
         return true;
       }
       return false;
     },
     $canAddHouse(houses) {
-      const user = JSON.parse(localStorage.getItem("ipms_admin"));
+      const user = JSON.parse(localStorage.getItem("nmw_admin"));
       if (user.type == "admin" && user.organization.max_houses > houses) {
         return true;
       }
       return false;
     },
     $userLogout() {
-      localStorage.removeItem("ipms_admin");
-      localStorage.removeItem("ipms_admin_token");
+      localStorage.removeItem("nmw_admin");
+      localStorage.removeItem("nmw_admin_token");
       this.$router.push({ name: "AdminLogin" });
     },
     $imageurlalt() {
